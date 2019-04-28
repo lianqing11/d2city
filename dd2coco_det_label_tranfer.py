@@ -66,6 +66,7 @@ def dd2coco(images, xml_file):
                 y2 = int(float(attrib['ybr']))
                 annotation['image_id'] = image2id[frame_name+"_{}.jpg".format(frame)]
                 annotation['area'] = float((x2-x1) * (y2-y1))
+                annotation['iscrowd'] = 0
                 annotation['bbox'] = [x1, y1, x2-x1, y2-y1]
                 annotation['id'] = annotation_id
                 annotation_id+=1

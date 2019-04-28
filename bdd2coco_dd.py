@@ -95,7 +95,7 @@ if __name__ == '__main__':
     print('Converting training set...')
 
     out_fn = os.path.join(args.save_path,
-                          'bdd100k_labels_images_det_coco_train_dd.json')
+                          'bdd100k_labels_images_det_coco_train_label_transfer.json')
     bdd2coco_detection(attr_id_dict, train_labels, out_fn, 'train/')
 
     print('Loading validation set...')
@@ -106,5 +106,5 @@ if __name__ == '__main__':
     print('Converting validation set...')
 
     out_fn = os.path.join(args.save_path,
-                          'bdd100k_labels_images_det_coco_val_dd.json')
+                          'bdd100k_labels_images_det_coco_val_label_transfer.json')
     bdd2coco_detection(attr_id_dict, val_labels, out_fn, 'val/')

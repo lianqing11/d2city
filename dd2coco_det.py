@@ -70,6 +70,7 @@ def dd2coco(images, xml_file):
                 annotation['id'] = annotation_id
                 annotation_id+=1
                 annotation['ignore'] = 0
+                annotation['iscrowd'] = 0
                 annotation['segmentation'] = [[x1, y1, x1, y2, x2, y2, x2, y1]]
                 annotation['category_id'] = track_label_id
                 annotations.append(annotation)
@@ -81,7 +82,20 @@ def dd2coco(images, xml_file):
             image['width'] = width
             image['id'] = image2id[image['file_name']]
             images.append(image)
-    attr_dict = {}
+    attr_dict = dict()
+    attr_dict["categories"] = [
+        {"supercategory": "none", "id": 1, "name": "person"},
+        {"supercategory": "none", "id": 2, "name": "rider"},
+        {"supercategory": "none", "id": 3, "name": "car"},
+        {"supercategory": "none", "id": 4, "name": "bus"},
+        {"supercategory": "none", "id": 5, "name": "truck"},
+        {"supercategory": "none", "id": 6, "name": "bike"},
+        {"supercategory": "none", "id": 7, "name": "motor"},
+        {"supercategory": "none", "id": 8, "name": "traffic light"},
+        {"supercategory": "none", "id": 9, "name": "traffic sign"},
+        {"supercategory": "none", "id": 10, "name": "train"}
+    ]
+
     attr_dict['images'] = images
     attr_dict['annotations'] = annotations
     attr_dict['type'] = "instances"
