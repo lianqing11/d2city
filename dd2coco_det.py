@@ -116,6 +116,7 @@ if __name__ == '__main__':
         f.write(json_string)
     val_image_id = glob.glob(args.dir + "0008/*.jpg")
     val_image_id = [i.split(args.dir)[1] for i in val_image_id]
+    val_image_id.sort()
     val_xmls = glob.glob(args.dir + "0008/*.xml")
     print(len(val_xmls), len(val_image_id))
     attr_dict = dd2coco(val_image_id, val_xmls)
