@@ -26,7 +26,7 @@ def convert(i):
     vid = imageio.read(i)
     for num, img in enumerate(vid.iter_data()):
         save_dir = i.split(".mp4")[0]
-        save_dir = save_dir+ "_{}.png".format(num)
+        save_dir = save_dir+ "_{}.jpg".format(num)
         img = Image.fromarray(img)
         img.save(save_dir)
 
