@@ -38,7 +38,7 @@ if __name__ == '__main__':
     video_list = glob.glob(args.dir + "000*/*.mp4")
     print("transfer video num {}".format(len(video_list)))
 
-    p = multiprocessing.Pool(24)
+    p = multiprocessing.Pool(48)
     b = p.map(convert, video_list)
     print("final transformation")
 
