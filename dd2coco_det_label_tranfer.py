@@ -131,5 +131,5 @@ if __name__ == '__main__':
     print(len(val_xmls), len(val_image_id))
     attr_dict = dd2coco(val_image_id, val_xmls)
     json_string = json.dumps(attr_dict)
-    with open("val_label_tranfer.json", 'w') as f:
+    with open("val_label_transfer.json", 'w') as f:
         f.write(json_string)

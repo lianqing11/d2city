@@ -7,7 +7,7 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description='BDD100K to COCO format')
     parser.add_argument(
           "-l", "--label_dir",
-          default="val_label_transfer.json",
+          default="./val_label_transfer.json",
           help="root directory of BDD label Json files",
     )
     return parser.parse_args()
@@ -16,7 +16,7 @@ def parse_arguments():
 args = parse_arguments()
 val = json.load(open(args.label_dir))
 images = val['images']
-sample_images = np.random.choice(images, 500, replace=False)
+sample_images = np.random.choice(images, 1500, replace=False)
 sample_images_id = [i['id'] for i in sample_images]
 annotations = val['annotations']
 sample_annotation = []
