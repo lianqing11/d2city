@@ -84,8 +84,7 @@ def dd2coco(images, xml_file):
             images.append(image)
     attr_dict = {}
     attr_dict["categories"] = [
-        {"supercategory": "none", "id": 4, "name": "person"},
-        {"supercategory": "none", "id": 4, "name": "rider"},
+        {"supercategory": "none", "id": 4, "name": "person rider"},
         {"supercategory": "none", "id": 1, "name": "car"},
         {"supercategory": "none", "id": 2, "name": "bus"},
         {"supercategory": "none", "id": 3, "name": "truck"},

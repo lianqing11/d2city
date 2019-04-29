@@ -87,6 +87,10 @@ if __name__ == '__main__':
 
     attr_id_dict = {i['name']: i['id'] for i in attr_dict['categories']}
 
+    attr_dict["categories"] = attr_dict["categories"][1:]
+    attr_dict["categories"][0]['name'] = "person rider"
+    print(attr_dict["categories"])
+
     # create BDD training set detections in COCO format
     print('Loading training set...')
     with open(os.path.join(args.label_dir,

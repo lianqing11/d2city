@@ -19,7 +19,7 @@ def parse_arguments():
     return parser.parse_args()
 
 
-def bdd2coco_detection(id_dict, labeled_images, fn):
+def bdd2coco_detection(id_dict, labeled_images, fn, mid_dir):
 
     images = list()
     annotations = list()
@@ -28,7 +28,7 @@ def bdd2coco_detection(id_dict, labeled_images, fn):
     for i in tqdm(labeled_images):
         counter += 1
         image = dict()
-        image['file_name'] = i['name']
+        image['file_name'] = mid_dir + i['name']
         image['height'] = 720
         image['width'] = 1280
 
@@ -98,7 +98,7 @@ if __name__ == '__main__':
 
     out_fn = os.path.join(args.save_path,
                           'bdd100k_labels_images_det_coco_train.json')
-    bdd2coco_detection(attr_id_dict, train_labels, out_fn)
+    bdd2coco_detection(attr_id_dict, train_labels, out_fn, "train/")
 
     print('Loading validation set...')
     # create BDD validation set detections in COCO format
@@ -109,4 +109,4 @@ if __name__ == '__main__':
 
     out_fn = os.path.join(args.save_path,
                           'bdd100k_labels_images_det_coco_val.json')
-    bdd2coco_detection(attr_id_dict, val_labels, out_fn)
+    bdd2coco_detection(attr_id_dict, val_labels, out_fn, "val/")
