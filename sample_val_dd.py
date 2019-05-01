@@ -16,7 +16,7 @@ def parse_arguments():
 args = parse_arguments()
 val = json.load(open(args.label_dir))
 images = val['images']
-sample_images = np.random.choice(images, 500, replace=False)
+sample_images = np.random.choice(images, 100, replace=False)
 sample_images_id = [i['id'] for i in sample_images]
 annotations = val['annotations']
 sample_annotation = []
