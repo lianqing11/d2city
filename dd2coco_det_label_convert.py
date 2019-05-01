@@ -121,7 +121,7 @@ if __name__ == '__main__':
     attr_dict = dd2coco(train_image_id, train_xmls)
 
     json_string = json.dumps(attr_dict)
-    with open("train_label_transfer.json", 'w') as f:
+    with open("train_label_convert.json", 'w') as f:
         f.write(json_string)
     val_image_id = glob.glob(args.dir + "0008/*.jpg")
     val_image_id = [i.split(args.dir)[1] for i in val_image_id]
@@ -130,5 +130,5 @@ if __name__ == '__main__':
     print(len(val_xmls), len(val_image_id))
     attr_dict = dd2coco(val_image_id, val_xmls)
     json_string = json.dumps(attr_dict)
-    with open("val_label_transfer.json", 'w') as f:
+    with open("val_label_convert.json", 'w') as f:
         f.write(json_string)

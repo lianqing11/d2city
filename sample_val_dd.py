@@ -7,7 +7,7 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description='BDD100K to COCO format')
     parser.add_argument(
           "-l", "--label_dir",
-          default="./val_label_transfer.json",
+          default="./val_label_convert.json",
           help="root directory of BDD label Json files",
     )
     return parser.parse_args()
@@ -30,5 +30,5 @@ attr_dict['annotations'] = sample_annotation
 attr_dict['type'] = "instances"
 attr_dict['categories'] = val['categories']
 json_string = json.dumps(attr_dict)
-with open("val_label_transfer_sample.json", 'w') as f:
+with open("val_label_convert_sample.json", 'w') as f:
     f.write(json_string)
