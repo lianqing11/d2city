@@ -76,19 +76,19 @@ if __name__ == '__main__':
 
     attr_dict = dict()
     attr_dict["categories"] = [
-        {"supercategory": "none", "id": 4, "name": "person"},
-        {"supercategory": "none", "id": 4, "name": "rider"},
         {"supercategory": "none", "id": 1, "name": "car"},
         {"supercategory": "none", "id": 2, "name": "bus"},
         {"supercategory": "none", "id": 3, "name": "truck"},
+        {"supercategory": "none", "id": 4, "name": "person"},
+        {"supercategory": "none", "id": 4, "name": "rider"},
         {"supercategory": "none", "id": 5, "name": "bike"},
         {"supercategory": "none", "id": 6, "name": "motor"},
     ]
 
     attr_id_dict = {i['name']: i['id'] for i in attr_dict['categories']}
 
-    attr_dict["categories"] = attr_dict["categories"][1:]
-    attr_dict["categories"][0]['name'] = "person rider"
+    attr_dict["categories"][3]['name'] = "person rider"
+    attr_dict["categories"].remove(attr_dict["categories"][4])
     print(attr_dict["categories"])
 
     # create BDD training set detections in COCO format

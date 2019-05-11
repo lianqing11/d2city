@@ -30,5 +30,7 @@ attr_dict['annotations'] = sample_annotation
 attr_dict['type'] = "instances"
 attr_dict['categories'] = val['categories']
 json_string = json.dumps(attr_dict)
-with open("bdd_coco_val_sample.json", 'w') as f:
+args.label_dir = args.label_dir.split(".json")[0] + "_sample.json"
+print(args.label_dir)
+with open(args.label_dir, 'w') as f:
     f.write(json_string)
